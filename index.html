@@ -1,0 +1,250 @@
+<!DOCTYPE html>  <html lang="pt-BR">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Para minha doce Luiza🌟💙</title>  
+  <style>  
+    body {  
+      margin: 0;  
+      font-family: 'Comic Sans MS', cursive, sans-serif;  
+      background-color: #0B1D51;  
+      color: #FFD700;  
+      overflow-x: hidden;  
+      position: relative;  
+    }  /* Frase principal */  
+.main-phrase {  
+  text-align: center;  
+  font-size: 2em;  
+  margin: 40px 0 20px 0;  
+}  
+
+/* Lista de músicas secundárias */  
+.playlist {  
+  max-width: 800px;  
+  margin: 20px auto;  
+  padding: 15px;  
+  border: 2px solid #FFD700;  
+  border-radius: 10px;  
+  background-color: rgba(255,255,255,0.05);  
+}  
+.playlist h3 {  
+  text-align: center;  
+  margin-bottom: 10px;  
+}  
+.playlist ul {  
+  list-style: none;  
+  padding-left: 0;  
+}  
+.playlist li {  
+  margin: 5px 0;  
+}  
+
+/* Botão música do Tim Bernandes */  
+.btn {  
+  display: block;  
+  margin: 10px auto;  
+  padding: 10px 20px;  
+  border: 2px solid #FFD700;  
+  border-radius: 5px;  
+  color: #FFD700;  
+  text-decoration: none;  
+  font-weight: bold;  
+  text-align: center;  
+  cursor: pointer;  
+  background-color: rgba(255, 255, 255, 0.05);  
+  transition: 0.3s;  
+}  
+.btn:hover {  
+  background-color: rgba(255, 255, 255, 0.15);  
+}  
+
+/* Estrelas laterais */  
+.star {  
+  position: absolute;  
+  fill: #FFD700;  
+  width: 20px;  
+  height: 20px;  
+  animation: twinkle 2s infinite alternate;  
+}  
+@keyframes twinkle {  
+  0% { opacity: 0.5; transform: scale(0.8); }  
+  50% { opacity: 1; transform: scale(1.1); }  
+  100% { opacity: 0.5; transform: scale(0.9); }  
+}  
+
+/* Spotify player escondido inicialmente */  
+.spotify-container {  
+  display: none;  
+  text-align: center;  
+  margin-top: 20px;  
+}  
+
+/* Textos e poemas */  
+.text-box, .poem-box {  
+  background-color: #142850;  
+  padding: 15px;  
+  border-radius: 10px;  
+  max-height: 250px;  
+  overflow-y: auto;  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);  
+  margin: 20px auto;  
+  max-width: 800px;  
+  scroll-behavior: smooth;  
+}  
+
+.date, .poem-title {  
+  font-weight: bold;  
+  margin-bottom: 10px;  
+  color: #FFD700;  
+}  
+
+/* Scrollbar estilizada */  
+.text-box::-webkit-scrollbar, .poem-box::-webkit-scrollbar {  
+  width: 10px;  
+}  
+.text-box::-webkit-scrollbar-track, .poem-box::-webkit-scrollbar-track {  
+  background: #0B1D51;  
+  border-radius: 5px;  
+}  
+.text-box::-webkit-scrollbar-thumb, .poem-box::-webkit-scrollbar-thumb {  
+  background: #FFD700;  
+  border-radius: 5px;  
+  border: 2px solid #0B1D51;  
+}  
+.text-box::-webkit-scrollbar-thumb:hover, .poem-box::-webkit-scrollbar-thumb:hover {  
+  background: #FFEA00;  
+}
+
+  </style>  
+</head>  
+<body>    <!-- Frase principal -->    <div class="main-phrase">para minha doce Luiza🌟💙</div>    <!-- Lista de músicas secundárias -->    <div class="playlist">  
+    <h3>Músicas que têm me lembrado você.🎧💙</h3>  
+    <ul>  
+      <li>Undressed - Sombr</li>  
+      <li>Oceano - Djavan</li>  
+      <li>Mundo inteiro - Desejo de Menina</li>  
+      <li>Pense em mim - Leandro e Leonardo</li>  
+      <li>Sublime renúncia - Leandro e Leonardo</li>  
+      <li>Lisboa - Anavitória</li>  
+      <li>Meddle About - Chase Atlantic</li>  
+      <li>Die for you - The Weeknd</li>  
+      <li>Amor meu grande amor - Ângela Roro</li>  
+      <li>Pelo tempo que durar - Marisa Monte</li>  
+    </ul>  
+  </div>    <!-- Botão surpresa da música do Tim Bernandes -->    <div class="btn" id="revealMusicBtn">uma mensagem do meu coração pra você 💙</div>    <!-- Spotify player escondido -->    <div class="spotify-container" id="spotifyPlayer">  
+    <iframe src="https://open.spotify.com/embed/track/2keowgwfIZHNvAof7skSya?utm_source=generator"   
+      width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">  
+    </iframe>  
+  </div>    <!-- Estrelas decorativas -->    <script>  
+    const starCount = 40;  
+    for(let i=0;i<starCount;i++){  
+      const svgNS = "http://www.w3.org/2000/svg";  
+      const star = document.createElementNS(svgNS,"svg");  
+      star.setAttribute("class","star");  
+      star.setAttribute("viewBox","0 0 24 24");  
+      star.style.top = `${Math.random()*100}%`;  
+      star.style.left = `${i%2===0?'2%':'95%'}`;  
+      star.innerHTML = `<polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/>`;  
+      document.body.appendChild(star);  
+    }  
+  
+    // Mostrar música ao clicar  
+    const revealBtn = document.getElementById("revealMusicBtn");  
+    const spotifyDiv = document.getElementById("spotifyPlayer");  
+    revealBtn.addEventListener("click", ()=>{  
+      spotifyDiv.style.display = "block";  
+      spotifyDiv.scrollIntoView({behavior:"smooth"});  
+      revealBtn.style.display = "none";  
+    });  
+  </script>    <!-- Textos Diários -->    <h1 style="text-align:center; color:#FFD700;">Textos Diários</h1>    <!-- 4 de novembro -->    <div class="text-box">  
+    <div class="date">4 de novembro de 2025</div>  
+    <p>Eu nem sei bem como começar... mas aqui estou. Hoje, depois de uma breve conversa sobre sentimentos, você escolheu se afastar. E, mesmo sem querer aceitar, eu concordei em silêncio. Não tive coragem de dizer o quanto isso me dói, porque uma parte de mim ainda se recusa a aceitar que, às vezes, o afastamento é o caminho mais saudável — e talvez o mais certo a se seguir.</p>  
+    <p>Você está confusa, indecisa, com medo. E está claro pra mim que agora não é o momento de fazer escolhas. Por isso, só te desejo o melhor. Espero, de coração, que o nosso reencontro aconteça um dia — de forma leve, gentil, e que, quando ele chegar, você saiba exatamente o que quer.</p>  
+    <p>Eu queria continuar perto, confesso. Morro de medo de que você me esqueça e siga em frente. Mas sempre acreditei que o que é nosso, de alguma forma, encontra o caminho de volta. É nisso que escolho acreditar agora.</p>  
+    <p>Talvez eu não tenha demonstrado o suficiente, mas conversando com você nesses últimos dias percebi que essa confusão toda tem mais a ver com o que você sente, do que comigo. Então, se cure. Seja feliz. Sorria. E desse lado aqui, estarei tentando fazer o mesmo. Não sei bem como ainda — mas vou.</p>  
+    <p>Está doendo, eu sei. Mas entendo que é necessário.</p>  
+    <p>Eu te amo, Ana. Silenciosamente, pacientemente, com carinho.</p>  
+    <p>E se um dia você tiver a chance de ler essa carta, é porque o destino nos uniu novamente — da forma mais linda e genuína possível. Então, quando esse dia chegar, que a gente vá com calma, respeite os limites, mas sem se perder de novo.</p>  
+    <p>Com amor,sua Ane.🩷</p>  
+  </div>    <!-- 6 de novembro -->    <div class="text-box">  
+    <div class="date">6 de novembro de 2025</div>  
+    <p>Estou completamente sozinha… Estou na sala, com as luzes apagadas, ouvindo a água da máquina de lavar escorrendo incansavelmente pelo chão. Se um dia você tiver a chance de ler isso aqui, vai ficar meio confusa com esse começo (eu te conheço o suficiente pra saber que vai, KKKJKKKK).</p>  
+    <p>Ana… são tantas coisas não ditas, tantas declarações que não foram feitas, tantos planos… Planos de te ver pessoalmente, de te abraçar, ou de só assistir qualquer coisa juntas, porque no final de tudo, era somente a sua presença que eu queria.</p>  
+    <p>Fico me perguntando o tempo todo onde nos perdemos. Quais sinais ignoramos? Nós tínhamos tanto potencial como casal, e eu quero forçar a esquecer o que vivemos da forma mais brusca possível… mas eu não consigo. Não consigo porque sei que foi real.</p>  
+    <p>As risadas, as conversas, os joguinhos do Roblox, as promessas de dedinho, os olhares… ah, os olhares! Meu Deus, Ana, como eu poderia te esquecer? Como eu poderia fingir que nada aconteceu, se tudo dói? Sinto que, ao anular a sua existência, estaria anulando a minha, porque, diferente de tudo que já vivi, com você foi uma coisa de alma — que não se explica.</p>  
+    <p>Por mais que eu tentasse descrever com todas as palavras do mundo, ainda pareceria pouco. Gosto de acreditar que tudo passa, mas, ao pensar em você, sinto que o meu amor jamais passaria.</p>  
+    <p>Eu só queria que você voltasse… Disposta a me ouvir, disposta a falar e, principalmente, disposta a ficar. Disposta a salvar o nosso amor — que não é perfeito, mas também não é comum.</p>  
+    <p>Mediante a tudo isso, eu te suplico: volte, meu amor. Volte.</p>  
+    <p>Notas adicionais: eu estava no banho, e comecei a rir demais KKKKJKKK porque abri o Instagram (antes de tomar banho né) e vi que você colocou uma música nas notas "a semana inteira" do Erasmo Carlos, agora acredito fielmente que tenha sido pra mim KKKKKKKKKKKKKK mesmo que você tenha o costume de às vezes só colocar a música que você quer sem ter um significado (você mesma já disse isso😔) mas sei lá, qualquer mísero, pequeno, pequeníssimo mesmo! Sinal de que o que tivemos foi real, me deixa feliz.. me faz sentir que eu não fui a única que amei.</p>  
+    <p>Com amor, sua Ane.🩷</p>  
+  </div>    <!-- 8 de novembro -->    <div class="text-box">  
+    <div class="date">8 de novembro de 2025</div>  
+    <p>Querida Luiza, esse texto provavelmente não vai ficar tão grande quanto os outros, não por falta do que dizer, mas porque toda palavra parece pequena diante do que sinto. Eu só queria compartilhar algo que tem pulsado forte em mim… Ultimamente tenho pensado no tipo de pessoa que eu era antes, e na pessoa que me tornei depois de você. A sua presença me transformou de um jeito tão lindo que viver e não poder ser sua torna tudo ainda mais difícil de lidar.</p>  
+    <p>E não é sobre dependência emocional, nem sobre um apego cego — é sobre a vontade genuína e quase insaciável de recomeçar. Recomeçar do zero, com calma, com verdade, com respeito, com a leveza de quem entende os passos da outra. Às vezes me pego pensando: “Ela parece bem sem mim… eu deveria desistir.” E talvez você realmente esteja bem sem mim. Mas eu… eu não estou tão bem sem você.</p>  
+    <p>Porque a cada ausência sua, algo se parte aqui dentro. Me dói abrir mão da mulher que eu não pude beijar, da mulher que eu não pude tocar com a ponta dos dedos, da mulher que nunca adormeceu envolvida nos meus braços. Parece quase ingênuo desistir de algo tão raro assim. Uma vez ouvi que o diálogo muda tudo — e eu acredito nisso. Sei que seria um processo lento, cheio de cuidado, talvez até difícil… mas não impossível.</p>  
+    <p>Eu estou disposta a tentar, de verdade. Mas só faria sentido se você também estivesse — no seu tempo, no seu ritmo, no momento em que o seu coração pedisse. Por isso escrevo hoje, aceitando até o risco da rejeição, porque às vezes arriscar dói menos do que passar uma vida imaginando como poderia ter sido.</p>  
+    <p>Com amor, sua Ane.🩷</p>  
+  </div>    <h1 style="text-align:center; color:#FFD700;">Poemas</h1>    <!-- Poema 1 -->    <div class="poem-box">  
+    <div class="poem-title">Minha doce e indecisa Luiza.</div>  
+    <p>Em meio à noite e à nostalgia,<br>  
+    procuro resquícios da minha doce Luiza,<br>  
+    aquela que minha alma ilumina<br>  
+    com uma luz tão calma que me fascina.</p>  
+    <p>E entre pensamentos que o vento finaliza,<br>  
+    tenho me afogado em lembranças antigas,<br>  
+    ainda buscando rastros da minha doce Luiza,<br>  
+    como quem tenta segurar o tempo<br>  
+    antes que ele desliza.</p>  
+    <p>Nas noites de brisa, teu nome suaviza<br>  
+    o silêncio que minha saudade eterniza;<br>  
+    ele volta, ecoa, insiste,<br>  
+    como quem avisa<br>  
+    que o sentimento não cicatriza,<br>  
+    mas cresce, pulsa<br>  
+    e se eterniza.</p>  
+    <p>E quando a madrugada analisa<br>  
+    o peso do que em mim precisa,<br>  
+    me pego escrevendo versos<br>  
+    que a tua ausência poetiza,<br>  
+    tentando arrumar no peito<br>  
+    o que tu bagunça e reorganiza.</p>  
+    <p>No fim, deixo palavras e beijos<br>  
+    que o meu coração suaviza,<br>  
+    para entregar ao vento —<br>  
+    que sempre te atualiza —<br>  
+    o carinho que ainda canaliza<br>  
+    minha doce e indecisa<br>  
+    Luiza.”</p>  
+    <p>Ass: sua poeta favorita!💙</p>  
+  </div>    <!-- Poema 2 -->    <div class="poem-box">  
+    <div class="poem-title">Minha Luiza, meu sol.</div>  
+    <p>Você chegou como quem não promete nada,<br>  
+    mas iluminou tudo que eu nem tinha coragem de olhar.<br>  
+    Luiza…<br>  
+    foi como se o mundo abrisse uma janela dentro de mim<br>  
+    e o sol resolvesse entrar pelo teu nome.</p>  
+    <p>Eu era cansaço, era silêncio,<br>  
+    era um coração tentando se esconder de si mesmo.<br>  
+    Mas você encostou a sua luz no meu peito,<br>  
+    e, de repente,<br>  
+    tudo aquilo que eu pensava ter perdido<br>  
+    começou a pulsar de novo.</p>  
+    <p>Você me restituiu por dentro,<br>  
+    não com grandes gestos,<br>  
+    mas com essa claridade sua<br>  
+    que chega devagar,<br>  
+    mas fica para sempre.</p>  
+    <p>Tem gente que passa.<br>  
+    Você não passou.<br>  
+    Você amanheceu em mim.</p>  
+    <p>E, desde então,<br>  
+    mesmo nos dias nublados,<br>  
+    eu carrego uma certeza suave:<br>  
+    no meu peito existe um sol<br>  
+    que tem o teu nome escondido no brilho.</p>  
+    <p>Ass: sua poeta favorita 💙</p>  
+  </div>    <!-- Poema 3: brincadeirinha -->    <div class="poem-box">  
+    <div class="poem-title">Segredo 😋😋</div>  
+    <p>Pra ler o terceiro poema vai ter que falar comigo 😋😋</p>  
+  </div>  </body>  
+</html>
